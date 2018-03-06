@@ -18,8 +18,8 @@ namespace Wex
 			
 			return new Rights()
 			{
-				Info = o.Value<int>("info") == 1,
-				Trade = o.Value<int>("trade") == 1
+				Info = ( o.Value<int>("info") == 1 ),
+				Trade = ( o.Value<int>("trade") == 1 )
 			};
 		}
 	}

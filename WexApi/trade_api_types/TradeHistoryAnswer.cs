@@ -30,7 +30,7 @@ namespace Wex
 				Amount = o.Value<decimal>("amount"),
 				Rate = o.Value<decimal>("rate"),
 				Timestamp = o.Value<UInt32>("timestamp"),
-				IsYourOrder = o.Value<int>("is_your_order") == 1,
+				IsYourOrder = ( o.Value<int>("is_your_order") == 1 ),
 				OrderId = o.Value<int>("order_id")
 			};
 		}

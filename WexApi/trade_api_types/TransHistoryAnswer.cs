@@ -11,39 +11,6 @@ using Wex.Utils;
 
 namespace Wex
 {
-	public enum TransType
-	{
-		Input = 1,
-		Output = 2,
-		Income = 4,
-		Expense = 5
-	}
-
-	public class TransTypeHelper
-	{
-		public static string ToString(TransType v)
-		{
-			return Enum.GetName(typeof(TransType), v);
-		}
-	}
-
-	public enum TransStatus
-	{
-		Rejected = 0,
-		WaitAccept = 1,
-		Successful = 2,
-		Confirmed = 3
-	}
-
-	public class TransStatusHelper
-	{
-		public static string ToString(TransStatus v)
-		{
-			return Enum.GetName(typeof(TransStatus), v);
-		}
-	}
-
-
 	public class Transaction
 	{
 		public TransType Type { get; private set; }

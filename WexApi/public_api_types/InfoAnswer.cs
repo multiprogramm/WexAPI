@@ -49,8 +49,10 @@ namespace Wex
 
 			return new InfoAnswer()
 			{
-				ServerTime = UnixTime.ConvertToDateTime(o.Value<UInt32>("server_time")),
-				Pairs = JsonHelpers.ReadPairDict<PairInfo>(o.Value<JObject>("pairs"), pair_info_reader)
+				ServerTime = UnixTime.ConvertToDateTime(
+					o.Value<UInt32>("server_time")),
+				Pairs = JsonHelpers.ReadPairDict<PairInfo>(
+					o.Value<JObject>("pairs"), pair_info_reader)
 			};
 		}
 	}

@@ -46,7 +46,8 @@ namespace ApiTest
 				decimal btc_usd_hight = ticker[WexPair.btc_usd].High;
 				decimal btc_usd_low = ticker[WexPair.btc_usd].Low;
 
-				Console.WriteLine("I'm hamster. I bought BTC for {0}$ and sold for {1}$", btc_usd_hight, btc_usd_low);
+				Console.WriteLine("I'm hamster. I bought BTC for {0}$ and sold for {1}$",
+					btc_usd_hight, btc_usd_low);
 			}
 
 			// depth example:
@@ -69,11 +70,12 @@ namespace ApiTest
 
 				var trades = WexPublicApi.Trades(BTC_USD_PAIR, limit: 1);
 
-				string str_deal = (trades[WexPair.btc_usd][0].Type == DealType.Ask) ? "buy" : "sell";
+				string str_deal = DealTypeHelper.ToString( trades[WexPair.btc_usd][0].Type );
 				decimal amount = trades[WexPair.btc_usd][0].Amount;
 				decimal price = trades[WexPair.btc_usd][0].Price;
 
-				Console.WriteLine("BTC/USD: Last deal is {0} {1}BTC by price {2}$", str_deal, amount, price);
+				Console.WriteLine("BTC/USD: Last deal is {0} {1}BTC by price {2}$",
+					str_deal, amount, price);
 			}
 
 			//-----------------------------------------------------------------
@@ -114,7 +116,8 @@ namespace ApiTest
 				//var trade_result = wex_trade_api.Trade(WexPair.btc_usd, TradeType.Buy, 10.0m, 1m);
 
 				//if( trade_result.OrderId == 0 )
-				//	Console.WriteLine("Done. Now I have {0}BTC.", trade_result.Funds.Amounts[WexCurrency.btc]);
+				//	Console.WriteLine("Done. Now I have {0}BTC.",
+				//		trade_result.Funds.Amounts[WexCurrency.btc]);
 				//else
 				//	Console.WriteLine("New order with id {0}.", trade_result.OrderId);
 			}
@@ -155,7 +158,8 @@ namespace ApiTest
 				Console.WriteLine();
 				Console.WriteLine("2.4. OrderInfo");
 
-				Console.WriteLine("Commented because most likely order with id 12345 does not exists :)");
+				Console.WriteLine(
+					"Commented because most likely order with id 12345 does not exists :)");
 
 				//var order_info = wex_trade_api.OrderInfo(order_id: 12345);
 				//Console.WriteLine("Order id 12345 has amount " + order_info.Amount);
@@ -169,7 +173,8 @@ namespace ApiTest
 				Console.WriteLine("Commented because it's operation with real money :)");
 
 				//var cancel_order_info = wex_trade_api.CancelOrder(order_id: 12345);
-				//Console.WriteLine("Order id 12345 is canceled, now I have {0} RUR", cancel_order_info.Funds.GetAmount(WexCurrency.rur));
+				//Console.WriteLine("Order id 12345 is canceled, now I have {0} RUR",
+				//	cancel_order_info.Funds.GetAmount(WexCurrency.rur));
 			}
 
 			// TradeHistory example:

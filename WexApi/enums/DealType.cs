@@ -26,5 +26,10 @@ namespace Wex
 					throw new ArgumentException();
 			}
 		}
+
+		public static string ToString(DealType deal_type)
+		{
+			return Enum.GetName(typeof(DealType), deal_type);
+		}
 	}
 }
