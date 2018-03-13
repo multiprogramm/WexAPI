@@ -21,6 +21,7 @@ namespace Wex
 		eth,
 		bch,
 		zec,
+		usdt,
 		CRYPTO_END, // bound only
 
 		// Fiat:
