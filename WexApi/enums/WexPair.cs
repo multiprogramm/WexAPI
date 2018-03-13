@@ -50,6 +50,7 @@ namespace Wex
 		dsh_zec,
 		eth_zec,
 		zec_ltc,
+		usdt_usd,
 
 		usdet_usd,
 		ruret_rur,
