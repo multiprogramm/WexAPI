@@ -39,7 +39,8 @@ namespace Wex
 		}
 
 		/// <summary>
-		/// Returns information about the user’s current balance, API-key privileges, the number of open orders and Server Time.
+		/// Returns information about the user’s current balance, API-key privileges,
+		///		the number of open orders and Server Time.
 		/// See https://wex.nz/tapi/docs#getInfo
 		/// </summary>
 		public UserInfo GetInfo()
@@ -277,7 +278,8 @@ namespace Wex
 			request.ContentLength = data.Length;
 
 			request.Headers.Add("Key", m_ApiKey);
-			request.Headers.Add("Sign", ByteArrayToString(m_HashSecret.ComputeHash(data)).ToLower());
+			request.Headers.Add("Sign",
+				ByteArrayToString(m_HashSecret.ComputeHash(data)).ToLower());
 
 			using (var req_stream = request.GetRequestStream())
 				req_stream.Write(data, 0, data.Length);

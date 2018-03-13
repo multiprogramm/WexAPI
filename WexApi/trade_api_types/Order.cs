@@ -31,7 +31,8 @@ namespace Wex
 				Amount = o.Value<decimal>("amount"),
 				StartAmount = o.Value<decimal>("start_amount"),
 				Rate = o.Value<decimal>("rate"),
-				TimestampCreated = UnixTime.ConvertToDateTime( o.Value<UInt32>("timestamp_created") ),
+				TimestampCreated = UnixTime.ConvertToDateTime(
+					o.Value<UInt32>("timestamp_created") ),
 				Status = o.Value<int>("status"),
 			};
 		}

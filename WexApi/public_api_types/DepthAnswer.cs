@@ -36,8 +36,10 @@ namespace Wex
 		{
 			return new DepthAnswer()
 			{
-				Asks = o["asks"].OfType<JArray>().Select(order => DepthOrderInfo.ReadFromJObject(order as JArray)).ToList(),
-				Bids = o["bids"].OfType<JArray>().Select(order => DepthOrderInfo.ReadFromJObject(order as JArray)).ToList()
+				Asks = o["asks"].OfType<JArray>().Select(
+					order => DepthOrderInfo.ReadFromJObject(order as JArray)).ToList(),
+				Bids = o["bids"].OfType<JArray>().Select(
+					order => DepthOrderInfo.ReadFromJObject(order as JArray)).ToList()
 			};
 		}
 	}
