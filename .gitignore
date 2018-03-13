@@ -41,9 +41,14 @@ local.properties
 *.user
 *.sln.docstates
 
+
 # Build results
-[Dd]ebug/
-[Rr]elease/
+/ApiExamples/obj
+/ApiExamples/x86
+/ApiExamples/x64
+/WexApi/obj
+/WexApi/x86
+/WexApi/x64
 *_i.c
 *_p.c
 *.ilk
@@ -161,7 +166,3 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
-/WexApi/x64
-/WexApi/x86
-x64
-x86
