@@ -52,6 +52,7 @@ namespace Wex
 		zec_ltc,
 		usdt_usd,
 		btc_usdt,
+		xmr_usd,
 
 		usdet_usd,
 		ruret_rur,
