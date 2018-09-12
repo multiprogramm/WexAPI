@@ -3,6 +3,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 namespace Wex
 {
@@ -82,6 +83,23 @@ namespace Wex
 				return CurrencyType.Token;
 
 			return CurrencyType.Unknown;
+		}
+
+		public static SortedSet<WexCurrency> GetAllCurrencies()
+		{
+			var result = new SortedSet<WexCurrency>(
+				(WexCurrency[])Enum.GetValues(typeof(WexCurrency))
+			);
+
+			result.Remove(WexCurrency.Unknown);
+			result.Remove(WexCurrency.CRYPTO_BEGIN);
+			result.Remove(WexCurrency.CRYPTO_END);
+			result.Remove(WexCurrency.FIAT_BEGIN);
+			result.Remove(WexCurrency.FIAT_END);
+			result.Remove(WexCurrency.TOKENS_BEGIN);
+			result.Remove(WexCurrency.TOKENS_END);
+
+			return result;
 		}
 	}
 }

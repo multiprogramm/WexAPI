@@ -3,6 +3,7 @@
 //
 
 using System;
+using System.Collections.Generic;
 
 namespace Wex
 {
@@ -78,6 +79,8 @@ namespace Wex
 
 	public class WexPairHelper
 	{
+		public static char[] PAIR_TO_CURR_SPLIT_CHARS = new char[] { '_' };
+
 		public static WexPair FromString(string s)
 		{
 			WexPair ret = WexPair.Unknown;
@@ -95,14 +98,26 @@ namespace Wex
 			if (p == WexPair.Unknown)
 				return null;
 			string str_p = ToString(p);
-			char[] SLPIT_CHARS = new char[] { '_' };
-			string[] arr = str_p.Split(SLPIT_CHARS);
+			string[] arr = str_p.Split(PAIR_TO_CURR_SPLIT_CHARS);
+			if (arr.Length != 2)
+				throw new Exception("Strange pair " + str_p);
 
 			return new PairCurrencies
 			{
 				BaseCurrency = WexCurrencyHelper.FromString(arr[0]),
 				QuoteCurrency = WexCurrencyHelper.FromString(arr[1])
 			};
+		}
+
+		public static SortedSet<WexPair> GetAllPairs()
+		{
+			var result = new SortedSet<WexPair>(
+				(WexPair[])Enum.GetValues(typeof(WexPair))
+			);
+
+			result.Remove(WexPair.Unknown);
+
+			return result;
 		}
 	}
 }
