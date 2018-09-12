@@ -62,11 +62,13 @@ namespace Wex
 		/// <param name="type">Order type: buy or sell</param>
 		/// <param name="rate">The rate at which you need to buy/sell</param>
 		/// <param name="amount">The amount you need to buy/sell</param>
+		/// <param name="mode">Order mode</param>
 		public TradeAnswer Trade(
 			WexPair pair,
 			TradeType type,
 			decimal rate,
-			decimal amount )
+			decimal amount,
+			TradeMode mode = TradeMode.Limit )
 		{
 			var args = new Dictionary<string, string>()
 			{
@@ -74,7 +76,8 @@ namespace Wex
 				{ "pair", WexPairHelper.ToString(pair) },
 				{ "type", TradeTypeHelper.ToString(type) },
 				{ "rate", DecimalToString(rate) },
-				{ "amount", DecimalToString(amount) }
+				{ "amount", DecimalToString(amount) },
+				{ "mode", TradeModeHelper.ToString(mode) }
 			};
 			string query_answer = QueryExec(args);
 			var json_result = ParseAnswer(query_answer);
