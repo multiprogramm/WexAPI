@@ -18,7 +18,7 @@ namespace Wex
 {
 	/// <summary>
 	/// This API allows to trade on the exchange and receive information about the account.
-	/// See https://wex.nz/tapi/docs
+	/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md
 	/// </summary>
 	public class WexTradeApi
 	{
@@ -26,8 +26,8 @@ namespace Wex
 
 		/// <summary>
 		/// See:
-		/// https://wex.nz/tapi/docs#main
-		/// https://wex.nz/tapi/docs#auth
+		/// https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#main
+		/// https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#auth
 		/// </summary>
 		/// <param name="key">API-key</param>
 		/// <param name="secret">Secret API-key</param>
@@ -41,7 +41,7 @@ namespace Wex
 		/// <summary>
 		/// Returns information about the user’s current balance, API-key privileges,
 		///		the number of open orders and Server Time.
-		/// See https://wex.nz/tapi/docs#getInfo
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#getInfo
 		/// </summary>
 		public UserInfo GetInfo()
 		{
@@ -56,7 +56,7 @@ namespace Wex
 
 		/// <summary>
 		/// The basic method that can be used for creating orders and trading on the exchange.
-		/// See https://wex.nz/tapi/docs#Trade
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#Trade
 		/// </summary>
 		/// <param name="pair">Pair</param>
 		/// <param name="type">Order type: buy or sell</param>
@@ -86,7 +86,7 @@ namespace Wex
 
 		/// <summary>
 		/// Returns the list of your active orders.
-		/// See https://wex.nz/tapi/docs#ActiveOrders
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#ActiveOrders
 		/// </summary>
 		/// <param name="pair">pair, default all pairs</param>
 		public OrderList ActiveOrders(WexPair pair = WexPair.Unknown)
@@ -106,7 +106,7 @@ namespace Wex
 
 		/// <summary>
 		/// Returns the information on particular order.
-		/// See https://wex.nz/tapi/docs#OrderInfo
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#OrderInfo
 		/// </summary>
 		/// <param name="order_id">order ID</param>
 		public Order OrderInfo(int order_id)
@@ -125,7 +125,7 @@ namespace Wex
 
 		/// <summary>
 		/// This method is used for order cancelation.
-		/// See https://wex.nz/tapi/docs#CancelOrder
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#CancelOrder
 		/// </summary>
 		/// <param name="order_id">order ID</param>
 		public CancelOrderAnswer CancelOrder(int order_id)
@@ -142,7 +142,7 @@ namespace Wex
 
 		/// <summary>
 		/// Returns trade history.
-		/// See https://wex.nz/tapi/docs#TradeHistory
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#TradeHistory
 		/// </summary>
 		/// <param name="from">Trade ID, from which the display starts</param>
 		/// <param name="count">The number of trades for display</param>
@@ -191,7 +191,7 @@ namespace Wex
 
 		/// <summary>
 		/// Returns the history of transactions.
-		/// See https://wex.nz/tapi/docs#TransHistory
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#TransHistory
 		/// </summary>
 		/// <param name="from">Transaction ID, from which the display starts</param>
 		/// <param name="count">Number of transaction to be displayed</param>
@@ -236,7 +236,7 @@ namespace Wex
 
 		/// <summary>
 		/// This method can be used to retrieve the address for depositing crypto-currency.
-		/// See https://wex.nz/tapi/docs#CoinDepositAddress
+		/// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#CoinDepositAddress
 		/// </summary>
 		/// <param name="crypto_currency">Crypto currency</param>
 		/// <returns>address for deposits</returns>
@@ -336,14 +336,14 @@ namespace Wex
 			if (json_root == null)
 			{
 				// If result_str is not json string, it's non-json error
-				// See https://wex.nz/tapi/docs#main
+				// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#main
 				throw new Exception(result_str);
 			}
 
 			if (json_root.Value<int>("success") == 0)
 			{
 				// Regular json response with error
-				// See https://wex.nz/tapi/docs#main
+				// See https://github.com/wex-exchange/api-doc/blob/master/trade-api.md#main
 				throw new Exception(json_root.Value<string>("error"));
 			}
 

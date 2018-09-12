@@ -17,7 +17,7 @@ namespace Wex
 	/// <summary>
 	/// This api provides access to such information as tickers of currency pairs,
 	///    active orders on different pairs, the latest trades for each pair etc.
-	/// See https://wex.nz/api/3/docs
+	/// See https://github.com/wex-exchange/api-doc/blob/master/public-api.md
 	/// </summary>
 	public static class WexPublicApi
 	{
@@ -28,7 +28,7 @@ namespace Wex
 		///     such as the maximum number of digits after the decimal point, 
 		///     the minimum price, the maximum price, the minimum transaction size, 
 		///     whether the pair is hidden, the commission for each pair.
-		/// See https://wex.nz/api/3/docs#info
+		/// See https://github.com/wex-exchange/api-doc/blob/master/public-api.md#info
 		/// </summary>
 		public static InfoAnswer Info()
 		{
@@ -42,7 +42,7 @@ namespace Wex
 		/// This method provides all the information about currently active pairs, such as:
 		///     the maximum price, the minimum price, average price, trade volume, trade
 		///     volume in currency, the last trade, Buy and Sell price.
-		/// See https://wex.nz/api/3/docs#ticker
+		/// See https://github.com/wex-exchange/api-doc/blob/master/public-api.md#ticker
 		/// </summary>
 		/// <param name="pairlist"></param>
 		/// <param name="is_ignore_invalid"></param>
@@ -59,7 +59,7 @@ namespace Wex
 
 		/// <summary>
 		/// This method provides the information about active orders on the pair.
-		/// See https://wex.nz/api/3/docs#depth
+		/// See https://github.com/wex-exchange/api-doc/blob/master/public-api.md#depth
 		/// </summary>
 		/// <param name="pairlist"></param>
 		/// <param name="limit"></param>
@@ -78,7 +78,7 @@ namespace Wex
 
 		/// <summary>
 		/// This method provides the information about the last trades.
-		/// See https://wex.nz/api/3/docs#trades
+		/// See https://github.com/wex-exchange/api-doc/blob/master/public-api.md#trades
 		/// </summary>
 		/// <param name="pairlist"></param>
 		/// <param name="limit"></param>
