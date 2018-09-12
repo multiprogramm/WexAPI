@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="enums\TradeMode.cs" />
     <Compile Include="enums\TransStatus.cs" />
     <Compile Include="enums\TransType.cs" />
     <Compile Include="main\APIRelevantTest.cs" />
