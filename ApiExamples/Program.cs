@@ -31,7 +31,7 @@ namespace ApiTest
 				var info = WexPublicApi.Info();
 
 				decimal btc_min_price_in_usd = info.Pairs[WexPair.btc_usd].MinPrice;
-				Console.WriteLine("Min BTC price in wex.nz is {0}$", btc_min_price_in_usd);
+				Console.WriteLine("Min BTC price in wex is {0}$", btc_min_price_in_usd);
 			}
 
 			var BTC_USD_PAIR = new WexPair[] { WexPair.btc_usd };
