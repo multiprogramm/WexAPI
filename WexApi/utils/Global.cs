@@ -6,6 +6,6 @@ namespace Wex
 {
 	static class Global
 	{
-		static public string Site { get { return "https://wex.link"; } }
+		static public string Site { get { return "https://wex.fit"; } }
 	}
 }
