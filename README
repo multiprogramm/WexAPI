@@ -1,19 +1,2 @@
 C# API for wex.fit (former wex.link, wex.nz, btc-e.com)
-====================
-
-Root project author
-------------
-  Galimzyanov Dmitry
-  Russia, Ekaterinburg city
-  Donate: 131W3PYbiydd7K8XhYo7YqPodUPVhztFMi
-
-Fork author
-------------
-  multiprogramm
-  Donate BTC: 1EVvSW8aHtj641hj1oUbXFEeKuACqns153
-  Donate BCH: 1EVvSW8aHtj641hj1oUbXFEeKuACqns153
-  Donate ETH: 0x31bbf57E25C68D6b91A054808cafa300EC5Bf095
-
-Example
-------------
-  See ApiExamples/Program.cs
+See ApiExamples/Program.cs
